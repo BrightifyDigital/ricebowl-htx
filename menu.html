@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Menu | Rice Bowl</title>
-  <meta name="description" content="Explore Chinese-American and Indonesian dishes, lunch specials, and dinner specials at Rice Bowl in Houston, Texas.">
+  <meta name="description" content="Explore Chinese-American and Indonesian dishes, plus 22 lunch and dinner special options at Rice Bowl in Houston, Texas.">
   <meta name="theme-color" content="#651f2b">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,13 +108,6 @@
       color: var(--wine);
     }
 
-    .nav-button {
-      padding: 10px 17px;
-      background: var(--wine);
-      color: white;
-      border-radius: 4px;
-    }
-
     .page-hero {
       padding: 82px 20px;
       background:
@@ -155,7 +147,7 @@
     }
 
     .menu-container {
-      max-width: 1050px;
+      max-width: 1120px;
       margin: auto;
       padding: 58px 24px 80px;
     }
@@ -185,9 +177,9 @@
 
     .specials-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      margin-bottom: 42px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-bottom: 25px;
     }
 
     .special-card {
@@ -201,12 +193,12 @@
     .special-card h3 {
       margin-bottom: 8px;
       color: var(--wine);
-      font-size: 24px;
+      font-size: 25px;
     }
 
     .special-time {
       display: inline-block;
-      margin-bottom: 12px;
+      margin-bottom: 13px;
       padding: 5px 10px;
       background: #f4ead9;
       color: var(--wine-dark);
@@ -215,15 +207,63 @@
       font-weight: 700;
     }
 
-    .special-card p {
-      color: var(--muted);
+    .special-includes {
+      margin-bottom: 15px;
+      padding: 12px 14px;
+      background: #fbf7ef;
+      border-radius: 4px;
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .special-includes strong {
+      color: var(--wine);
+    }
+
+    .special-card h4 {
+      margin-bottom: 11px;
+      color: var(--wine);
       font-size: 14px;
     }
 
+    .special-options {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      list-style: none;
+    }
+
+    .special-options li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .special-options li:last-child {
+      border-bottom: none;
+    }
+
+    .option-number {
+      min-width: 22px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .spicy-label {
+      color: #9a3c2d;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
     .special-price {
-      margin-top: 14px;
+      margin-top: 17px;
+      padding-top: 13px;
+      border-top: 1px solid var(--border);
       color: var(--wine);
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
     }
 
@@ -391,7 +431,7 @@
       color: var(--gold);
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 760px) {
       .nav {
         align-items: flex-start;
         flex-direction: column;
@@ -461,40 +501,96 @@
       </p>
     </div>
 
-    <!-- Lunch and dinner specials -->
-    <h2 class="specials-heading">Daily Specials</h2>
+    <h2 class="specials-heading">Lunch & Dinner Specials</h2>
 
     <div class="specials-grid">
+
       <article class="special-card">
         <h3>Lunch Specials</h3>
         <span class="special-time">11:00 AM – 4:00 PM</span>
-        <p>
-          Explore Rice Bowl's lunch special selections.
-          Contact the restaurant for current dishes and details.
-        </p>
-        <div class="special-price">Price: $________</div>
+
+        <div class="special-includes">
+          <strong>Includes:</strong> Fried rice and an egg roll.
+        </div>
+
+        <h4>Choose from 22 entrée options:</h4>
+
+        <ol class="special-options">
+          <li><span class="option-number">1.</span> Moo Gai Pan</li>
+          <li><span class="option-number">2.</span> Sesame Chicken</li>
+          <li><span class="option-number">3.</span> Chicken with Mixed Vegetables</li>
+          <li><span class="option-number">4.</span> Sweet and Sour Chicken</li>
+          <li><span class="option-number">5.</span> Kung Pao Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">6.</span> Cashew Chicken</li>
+          <li><span class="option-number">7.</span> Chicken with Broccoli</li>
+          <li><span class="option-number">8.</span> Hunan Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">9.</span> Chicken in Garlic Sauce <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">10.</span> General Joe's Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">11.</span> Curry Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">12.</span> Beef with Broccoli</li>
+          <li><span class="option-number">13.</span> Pepper Steak and Onion</li>
+          <li><span class="option-number">14.</span> Hunan Beef <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">15.</span> Shrimp with Lobster Sauce</li>
+          <li><span class="option-number">16.</span> Shrimp with Mixed Vegetables</li>
+          <li><span class="option-number">17.</span> Shrimp in Garlic Sauce <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">18.</span> Shrimp and Chicken Two Style <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">19.</span> Chicken, Beef and Shrimp in Mandarin Style</li>
+          <li><span class="option-number">20.</span> Shrimp with Broccoli</li>
+          <li><span class="option-number">21.</span> Lemon Chicken</li>
+          <li><span class="option-number">22.</span> Orange Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+        </ol>
+
+        <div class="special-price">Price: $</div>
       </article>
 
       <article class="special-card">
         <h3>Dinner Specials</h3>
         <span class="special-time">Available All Day</span>
-        <p>
-          Explore Rice Bowl's dinner special selections.
-          Contact the restaurant for current dishes and details.
-        </p>
-        <div class="special-price">Price: $________</div>
+
+        <div class="special-includes">
+          <strong>Includes:</strong> Fried rice, an egg roll, and a cream cheese puff.
+        </div>
+
+        <h4>Choose from 22 entrée options:</h4>
+
+        <ol class="special-options">
+          <li><span class="option-number">1.</span> Moo Gai Pan</li>
+          <li><span class="option-number">2.</span> Sesame Chicken</li>
+          <li><span class="option-number">3.</span> Chicken with Mixed Vegetables</li>
+          <li><span class="option-number">4.</span> Sweet and Sour Chicken</li>
+          <li><span class="option-number">5.</span> Kung Pao Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">6.</span> Cashew Chicken</li>
+          <li><span class="option-number">7.</span> Chicken with Broccoli</li>
+          <li><span class="option-number">8.</span> Hunan Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">9.</span> Chicken in Garlic Sauce <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">10.</span> General Joe's Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">11.</span> Curry Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">12.</span> Beef with Broccoli</li>
+          <li><span class="option-number">13.</span> Pepper Steak and Onion</li>
+          <li><span class="option-number">14.</span> Hunan Beef <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">15.</span> Shrimp with Lobster Sauce</li>
+          <li><span class="option-number">16.</span> Shrimp with Mixed Vegetables</li>
+          <li><span class="option-number">17.</span> Shrimp in Garlic Sauce <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">18.</span> Shrimp and Chicken Two Style <span class="spicy-label">(Hot & Spicy)</span></li>
+          <li><span class="option-number">19.</span> Chicken, Beef and Shrimp in Mandarin Style</li>
+          <li><span class="option-number">20.</span> Shrimp with Broccoli</li>
+          <li><span class="option-number">21.</span> Lemon Chicken</li>
+          <li><span class="option-number">22.</span> Orange Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+        </ol>
+
+        <div class="special-price">Price: $</div>
       </article>
+
     </div>
 
     <div class="notice">
       <strong>Specials information:</strong>
-      Special selections, prices, and availability should be confirmed
-      directly with the restaurant.
+      Prices, selections, included items, and availability may change.
+      Please confirm current details directly with the restaurant.
     </div>
 
     <hr class="menu-divider">
 
-    <!-- Main menu -->
     <div class="intro">
       <div class="eyebrow">Two Cuisines</div>
       <h2>Chinese & Indonesian Menu</h2>
@@ -527,10 +623,10 @@
 
     <div class="notice">
       <strong>Prices subject to change.</strong>
-      Prices are shown as editable placeholders because current prices
-      have not been confirmed. Descriptions are listed as N/A where
-      details have not been provided. Please contact Rice Bowl for
-      current pricing, ingredients, and availability.
+      Prices are shown as editable dollar-sign placeholders because
+      current prices have not been confirmed. Descriptions are listed
+      as N/A where details have not been provided. Please contact Rice
+      Bowl for current pricing, ingredients, and availability.
     </div>
 
     <a href="index.html" class="back-link">← Back to Homepage</a>
@@ -546,6 +642,7 @@
       <a href="menu.html">Menu</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <a href="index.html#faq">FAQ</a>
     </div>
 
     <p>14360 Bellaire Blvd #98, Houston, TX 77083</p>
@@ -808,7 +905,7 @@
 
             const price = document.createElement("span");
             price.className = "menu-price";
-            price.textContent = "$____";
+            price.textContent = "$";
 
             details.appendChild(title);
             details.appendChild(description);
