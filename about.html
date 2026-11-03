@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us | Rice Bowl</title>
+  <meta name="description" content="Learn about Rice Bowl, featuring Chinese-American and Indonesian cuisine in Houston, Texas.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --wine: #651f2b;
+      --wine-dark: #42131c;
+      --gold: #c69a52;
+      --cream: #fbf7ef;
+      --paper: #fffdf9;
+      --ink: #292522;
+      --muted: #756e68;
+      --border: #e9dfd2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .concept-banner {
+      background: #f1e6d5;
+      color: #634c35;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 12px;
+    }
+
+    header {
+      background: var(--paper);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 17px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--wine);
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--gold);
+      font-family: "DM Sans", sans-serif;
+      font-size: 9px;
+      letter-spacing: .2em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--wine);
+    }
+
+    .hero {
+      min-height: 430px;
+      background:
+        linear-gradient(rgba(45, 15, 18, .8), rgba(45, 15, 18, .8)),
+        url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 70px 20px;
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", serif;
+      line-height: 1.2;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 65px);
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: #eee3db;
+      font-size: 16px;
+    }
+
+    .section {
+      max-width: 1180px;
+      margin: auto;
+      padding: 85px 24px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .story-grid img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .story-content h2 {
+      color: var(--wine);
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .story-content p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .cuisine-section {
+      background: var(--paper);
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading h2 {
+      color: var(--wine);
+      font-size: 40px;
+      margin-bottom: 13px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .cuisine-grid {
+      max-width: 1180px;
+      margin: auto;
+      padding: 0 24px 85px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .cuisine-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .cuisine-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cuisine-content {
+      padding: 27px;
+    }
+
+    .cuisine-content h3 {
+      color: var(--wine);
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .cuisine-content p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .visit-section {
+      background: var(--wine-dark);
+      color: white;
+      text-align: center;
+      padding: 80px 24px;
+    }
+
+    .visit-section h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .visit-section p {
+      color: #e9dcd5;
+      margin-bottom: 25px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: #25180e;
+      padding: 13px 23px;
+      border-radius: 4px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: #dbb879;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: #28191a;
+      color: white;
+      text-align: center;
+      padding: 38px 20px;
+    }
+
+    footer h2 {
+      font-size: 26px;
+    }
+
+    footer p {
+      color: #c9bdb5;
+      font-size: 13px;
+      margin-top: 9px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 14px;
+        flex-wrap: wrap;
+        font-size: 12px;
+      }
+
+      .story-grid,
+      .cuisine-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story-grid {
+        gap: 30px;
+      }
+
+      .story-grid img {
+        height: 280px;
+      }
+
+      .section {
+        padding: 60px 19px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Independent concept notice -->
+  <div class="concept-banner">
+    Independent website concept by Brightify Digital · Not the restaurant's official website
+  </div>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="nav">
+      <a href="index.html" class="brand">
+        RICE BOWL
+        <small>CHINESE & INDONESIAN CUISINE</small>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Get to Know Rice Bowl</div>
+        <h1>A Blend of Culinary Traditions</h1>
+        <p>
+          Discover a restaurant experience featuring Chinese-American
+          favorites and Indonesian cuisine in Houston, Texas.
+        </p>
+      </div>
+    </section>
+
+    <!-- Restaurant Introduction -->
+    <section class="section">
+      <div class="story-grid">
+
+        <img
+          src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=85"
+          alt="Illustrative restaurant dining photography"
+        >
+
+        <div class="story-content">
+          <div class="eyebrow">About Rice Bowl</div>
+
+          <h2>Two Cuisines. A Diverse Menu.</h2>
+
+          <p>
+            Rice Bowl is a Houston restaurant offering a selection
+            of Chinese-American and Indonesian dishes.
+          </p>
+
+          <p>
+            Its two-menu concept gives customers the opportunity
+            to explore familiar Chinese-American options alongside
+            dishes rooted in Indonesian culinary traditions.
+          </p>
+
+          <p>
+            Whether you are looking for fried rice, noodles,
+            chicken, seafood, or traditional Indonesian favorites,
+            the menu offers different options to explore.
+          </p>
+
+          <a href="menu.html" class="button">
+            Explore the Menu
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Cuisine Features -->
+    <section class="cuisine-section">
+
+      <div class="section">
+        <div class="section-heading">
+          <div class="eyebrow">Explore Our Cuisines</div>
+          <h2>A Variety of Flavors</h2>
+          <p>
+            Discover the two culinary traditions represented
+            throughout the menu.
+          </p>
+        </div>
+      </div>
+
+      <div class="cuisine-grid">
+
+        <article class="cuisine-card">
+          <img
+            src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=85"
+            alt="Illustrative Chinese cuisine photography"
+          >
+
+          <div class="cuisine-content">
+            <h3>Chinese Cuisine</h3>
+
+            <p>
+              Explore a variety of Chinese-American dishes,
+              including fried rice, lo mein, soups, chicken,
+              beef, shrimp, and chef's specials.
+            </p>
+          </div>
+        </article>
+
+        <article class="cuisine-card">
+          <img
+            src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1000&q=85"
+            alt="Illustrative Indonesian cuisine photography"
+          >
+
+          <div class="cuisine-content">
+            <h3>Indonesian Cuisine</h3>
+
+            <p>
+              Discover traditional Indonesian dishes such as
+              rendang, satay, nasi goreng, soups, noodles,
+              and vegetable-based selections.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Visit CTA -->
+    <section class="visit-section">
+      <div class="eyebrow">Located in Houston, Texas</div>
+
+      <h2>Ready to Explore?</h2>
+
+      <p>
+        Browse the menu and find Rice Bowl on Bellaire Boulevard.
+      </p>
+
+      <a href="menu.html" class="button">View the Menu</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <h2>RICE BOWL</h2>
+
+    <p>Chinese & Indonesian Cuisine</p>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
+    <p>14360 Bellaire Blvd #98, Houston, TX 77083</p>
+    <p>Independent concept by Brightify Digital</p>
+  </footer>
+
+</body>
+</html>
