@@ -1,0 +1,1081 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rice Bowl | Chinese & Indonesian Cuisine</title>
+  <meta name="description" content="Explore the Rice Bowl menu, featuring Chinese-American and Indonesian cuisine in Houston, Texas.">
+  <meta name="theme-color" content="#651f2b">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --wine: #651f2b;
+      --wine-dark: #42131c;
+      --gold: #c69a52;
+      --cream: #fbf7ef;
+      --paper: #fffdf9;
+      --ink: #292522;
+      --muted: #756e68;
+      --border: #e9dfd2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .concept-banner {
+      background: #f1e6d5;
+      color: #634c35;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 12px;
+      letter-spacing: .04em;
+    }
+
+    header {
+      background: var(--paper);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 17px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--wine);
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--gold);
+      font-family: "DM Sans", sans-serif;
+      font-size: 9px;
+      letter-spacing: .2em;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--wine);
+    }
+
+    .nav-button {
+      background: var(--wine);
+      color: white !important;
+      padding: 11px 18px;
+      border-radius: 4px;
+    }
+
+    .hero {
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(35, 14, 13, .88), rgba(35, 14, 13, .35)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 1180px;
+      width: 100%;
+      margin: auto;
+      padding: 85px 24px;
+    }
+
+    .eyebrow {
+      color: #e5bd7d;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", serif;
+      line-height: 1.15;
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      font-size: clamp(43px, 7vw, 76px);
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 530px;
+      color: #f2e9df;
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: #25180e;
+      border: none;
+      border-radius: 4px;
+      padding: 14px 23px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: #dbb879;
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      margin-left: 10px;
+    }
+
+    .section {
+      max-width: 1180px;
+      margin: auto;
+      padding: 85px 24px;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading h2 {
+      color: var(--wine);
+      font-size: clamp(32px, 5vw, 46px);
+      margin-bottom: 13px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .cuisine-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .cuisine-card {
+      min-height: 300px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 7px;
+      color: white;
+      display: flex;
+      align-items: end;
+      padding: 30px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .cuisine-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(25, 12, 10, .88));
+    }
+
+    .cuisine-card > div {
+      position: relative;
+    }
+
+    .cuisine-card h3 {
+      font-size: 29px;
+      margin-bottom: 8px;
+    }
+
+    .cuisine-card p {
+      color: #f0e8e0;
+      font-size: 14px;
+    }
+
+    .chinese-card {
+      background-image: url("https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=80");
+    }
+
+    .indonesian-card {
+      background-image: url("https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1000&q=80");
+    }
+
+    .feature {
+      background: var(--wine-dark);
+      color: white;
+    }
+
+    .feature-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 75px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .feature img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .feature h2 {
+      font-size: clamp(32px, 5vw, 45px);
+      margin-bottom: 18px;
+    }
+
+    .feature p {
+      color: #e9dcd5;
+      margin-bottom: 25px;
+    }
+
+    .menu-section {
+      background: var(--paper);
+    }
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--wine);
+      padding: 12px 22px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .tab-button.active {
+      background: var(--wine);
+      color: white;
+      border-color: var(--wine);
+    }
+
+    .menu-search {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto 30px;
+      padding: 14px 17px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: white;
+      outline-color: var(--gold);
+    }
+
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+      margin-bottom: 35px;
+    }
+
+    .filter-button {
+      border: 1px solid var(--border);
+      background: var(--cream);
+      color: var(--ink);
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .filter-button.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #281b10;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .menu-item {
+      padding: 19px 20px;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 5px;
+    }
+
+    .menu-item h3 {
+      color: var(--wine);
+      font-size: 19px;
+      margin-bottom: 5px;
+    }
+
+    .menu-item p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .menu-category-title {
+      grid-column: 1 / -1;
+      color: var(--wine);
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      margin-top: 15px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .menu-note {
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+      margin-top: 28px;
+    }
+
+    .reviews {
+      background: #f1e9dc;
+    }
+
+    .review-card {
+      max-width: 750px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 6px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .rating {
+      color: var(--gold);
+      font-size: 27px;
+      letter-spacing: 4px;
+    }
+
+    .rating-number {
+      color: var(--wine);
+      font-family: "Playfair Display", serif;
+      font-size: 43px;
+      margin: 8px 0;
+    }
+
+    .review-card p {
+      color: var(--muted);
+      margin: 12px 0 22px;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .location-grid h2 {
+      color: var(--wine);
+      font-size: 38px;
+      margin-bottom: 17px;
+    }
+
+    .location-details {
+      margin: 22px 0;
+    }
+
+    .location-details p {
+      margin: 10px 0;
+      color: var(--muted);
+    }
+
+    .map-card {
+      min-height: 300px;
+      border-radius: 6px;
+      background:
+        linear-gradient(rgba(65, 28, 28, .3), rgba(65, 28, 28, .3)),
+        url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=80")
+        center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 25px;
+    }
+
+    .map-card h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      background: #28191a;
+      color: white;
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    footer .brand {
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    footer p {
+      color: #c9bdb5;
+      font-size: 13px;
+      margin: 7px 0;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px 0;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 510px;
+      }
+
+      .cuisine-grid,
+      .feature-inner,
+      .menu-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-inner {
+        gap: 30px;
+      }
+
+      .feature img {
+        height: 260px;
+      }
+
+      .section {
+        padding: 65px 19px;
+      }
+
+      .button-outline {
+        margin: 12px 0 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Independent concept notice -->
+  <div class="concept-banner">
+    Independent website concept by Brightify Digital · Not the restaurant's official website
+  </div>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="nav">
+      <a href="#home" class="brand">
+        RICE BOWL
+        <small>CHINESE & INDONESIAN CUISINE</small>
+      </a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#cuisine">Our Cuisine</a>
+        <a href="#menu">Menu</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact" class="nav-button">Find Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">A Taste Worth Sharing</div>
+
+        <h1>Discover the Flavors of Rice Bowl.</h1>
+
+        <p>
+          Explore a combination of Chinese-American favorites and
+          Indonesian dishes, bringing two distinct culinary traditions
+          together in Houston.
+        </p>
+
+        <a href="#menu" class="button">Explore Our Menu</a>
+        <a href="#contact" class="button button-outline">Visit Us</a>
+      </div>
+    </section>
+
+    <!-- Cuisine -->
+    <section class="section" id="cuisine">
+      <div class="section-heading">
+        <div class="eyebrow">Two Cuisines. One Destination.</div>
+        <h2>Something for Every Craving</h2>
+        <p>
+          Explore two different menus, featuring familiar favorites
+          and traditional Indonesian dishes.
+        </p>
+      </div>
+
+      <div class="cuisine-grid">
+        <a href="#menu" class="cuisine-card chinese-card">
+          <div>
+            <h3>Chinese Cuisine</h3>
+            <p>
+              Fried rice, lo mein, chicken, beef, seafood, and more.
+            </p>
+          </div>
+        </a>
+
+        <a href="#menu" class="cuisine-card indonesian-card">
+          <div>
+            <h3>Indonesian Cuisine</h3>
+            <p>
+              Traditional dishes featuring bold flavors and
+              distinctive ingredients.
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Featured Dish -->
+    <section class="feature">
+      <div class="feature-inner">
+        <div>
+          <div class="eyebrow">Explore Indonesian Favorites</div>
+          <h2>Discover Beef Rendang</h2>
+          <p>
+            Rendang is a traditional Indonesian dish known for its
+            rich seasoning and slow-cooked flavor. Explore the
+            Indonesian menu to discover more dishes.
+          </p>
+          <a href="#menu" class="button">View Indonesian Menu</a>
+        </div>
+
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
+          alt="Illustrative food photography"
+        >
+      </div>
+    </section>
+
+    <!-- Interactive Menu -->
+    <section class="section menu-section" id="menu">
+      <div class="section-heading">
+        <div class="eyebrow">Explore the Menu</div>
+        <h2>Find Your Next Favorite</h2>
+        <p>
+          Browse the Chinese and Indonesian menu options.
+          Search for a dish or select a category.
+        </p>
+      </div>
+
+      <div class="menu-tabs">
+        <button class="tab-button active" data-menu="chinese">
+          Chinese Menu
+        </button>
+
+        <button class="tab-button" data-menu="indonesian">
+          Indonesian Menu
+        </button>
+      </div>
+
+      <input
+        type="search"
+        id="menu-search"
+        class="menu-search"
+        placeholder="Search for a dish..."
+        aria-label="Search menu items"
+      >
+
+      <div class="category-filters" id="category-filters"></div>
+
+      <div class="menu-grid" id="menu-grid"></div>
+
+      <p class="menu-note">
+        Menu items are based on publicly available menu documents.
+        Confirm current offerings, prices, and availability with the restaurant.
+      </p>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section reviews" id="reviews">
+      <div class="section-heading">
+        <div class="eyebrow">Customer Feedback</div>
+        <h2>What Customers Are Saying</h2>
+        <p>
+          A look at publicly available customer feedback.
+        </p>
+      </div>
+
+      <div class="review-card">
+        <div class="rating">★★★★★</div>
+        <div class="rating-number">4.1 / 5</div>
+
+        <p>
+          Rice Bowl has received positive customer feedback mentioning
+          its food selection, generous portions, and service.
+        </p>
+
+        <p>
+          <strong>221 ratings</strong> · Restaurantji snapshot,
+          checked November 2026.
+        </p>
+
+        <a
+          href="https://www.restaurantji.com/tx/houston/rice-bowl-chinese-restaurant-/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button"
+        >
+          Read Customer Reviews
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact and Location -->
+    <section class="section" id="contact">
+      <div class="location-grid">
+        <div>
+          <div class="eyebrow">Visit Rice Bowl</div>
+          <h2>Find Us in Houston</h2>
+
+          <p>
+            Stop by Rice Bowl on Bellaire Boulevard and explore
+            its Chinese and Indonesian menu.
+          </p>
+
+          <div class="location-details">
+            <p><strong>Address:</strong> 14360 Bellaire Blvd #98, Houston, TX 77083</p>
+            <p><strong>Phone:</strong> (281) 988-9912</p>
+            <p><strong>Monday – Saturday:</strong> 11:00 AM – 9:30 PM</p>
+            <p><strong>Sunday:</strong> 12:00 PM – 9:00 PM</p>
+          </div>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=14360+Bellaire+Blvd+%2398+Houston+TX+77083"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button"
+          >
+            Get Directions
+          </a>
+
+          <a href="tel:+12819889912" class="button button-outline" style="background:var(--wine);">
+            Call Restaurant
+          </a>
+        </div>
+
+        <div class="map-card">
+          <div>
+            <h3>Rice Bowl</h3>
+            <p>14360 Bellaire Blvd #98</p>
+            <p>Houston, Texas 77083</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="brand">RICE BOWL</div>
+    <p>Chinese & Indonesian Cuisine</p>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <p>14360 Bellaire Blvd #98 · Houston, TX 77083</p>
+    <p>Independent concept by Brightify Digital</p>
+  </footer>
+
+  <script>
+    // --------------------------------------------------
+    // MENU DATA
+    // Menu names are based on publicly available documents.
+    // Confirm all information with the restaurant.
+    // --------------------------------------------------
+
+    const menus = {
+      chinese: {
+        "Appetizers": [
+          "Egg Rolls",
+          "Cream Cheese Puffs",
+          "Barbecued Roast Pork",
+          "Fried Biscuits",
+          "Fried Fillet Fish & Fries",
+          "Popcorn Shrimp & Fries",
+          "French Fries",
+          "Fried Chicken Wings"
+        ],
+
+        "Soups": [
+          "Wonton Soup",
+          "Egg Drop Soup",
+          "Hot & Sour Soup",
+          "Chicken Noodle Soup",
+          "Wonton Deluxe Soup",
+          "House Special Soup",
+          "Vegetable Soup"
+        ],
+
+        "Fried Rice": [
+          "Pork Fried Rice",
+          "Chicken Fried Rice",
+          "Beef Fried Rice",
+          "Vegetable Fried Rice",
+          "Shrimp Fried Rice",
+          "Chef's Special Fried Rice"
+        ],
+
+        "Lo Mein": [
+          "Pork Lo Mein",
+          "Beef Lo Mein",
+          "Chicken Lo Mein",
+          "Vegetable Lo Mein",
+          "Shrimp Lo Mein",
+          "Chef's Special Lo Mein"
+        ],
+
+        "Chicken": [
+          "Sweet & Sour Chicken",
+          "Moo Goo Gai Pan",
+          "Pepper Chicken with Onion",
+          "Chicken with Broccoli",
+          "Kung Pao Chicken",
+          "Curry Chicken",
+          "Chicken in Garlic Sauce",
+          "Cashew Chicken",
+          "General Joe's Chicken",
+          "Sesame Chicken",
+          "Hunan Chicken",
+          "Chicken with Mixed Vegetables",
+          "Orange-Flavored Chicken"
+        ],
+
+        "Beef": [
+          "Beef with Broccoli",
+          "Pepper Steak with Onion",
+          "Beef with Mixed Vegetables",
+          "Beef with Snow Peas & Mushroom",
+          "Mandarin-Style Beef",
+          "Hunan Beef",
+          "Kung Pao Beef",
+          "Beef in Garlic Sauce",
+          "Orange-Flavored Beef"
+        ],
+
+        "Shrimp": [
+          "Sweet & Sour Shrimp",
+          "Shrimp with Mixed Vegetables",
+          "Shrimp with Lobster Sauce",
+          "Cashew Shrimp",
+          "Kung Pao Shrimp",
+          "Hunan Shrimp",
+          "Shrimp with Broccoli",
+          "Shrimp in Garlic Sauce"
+        ],
+
+        "Wings": [
+          "Garlic Wings",
+          "Spicy Wings",
+          "Curry Wings",
+          "Teriyaki Wings",
+          "Honey Wings",
+          "Lemon Pepper Wings"
+        ],
+
+        "Egg Foo Young": [
+          "Pork Egg Foo Young",
+          "Chicken Egg Foo Young",
+          "Beef Egg Foo Young",
+          "Vegetable Egg Foo Young",
+          "Shrimp Egg Foo Young",
+          "Combination Egg Foo Young"
+        ],
+
+        "Vegetables": [
+          "Fresh Mixed Vegetables",
+          "Fresh Broccoli in Garlic Sauce",
+          "Spicy Stir-Fried Green Beans"
+        ],
+
+        "Chef's Specials": [
+          "Szechuan Fish",
+          "Crispy Shrimp with Broccoli",
+          "Triple Crown",
+          "Seafood Delight",
+          "Shrimp & Chicken in Two Styles",
+          "Four Delight in Garlic Sauce",
+          "Chicken, Beef & Shrimp Mandarin Style",
+          "Kung Pao Four Delight",
+          "General Joe's Shrimp"
+        ]
+      },
+
+      indonesian: {
+        "Appetizers & Sides": [
+          "Pangsit Goreng",
+          "Empek-Empek",
+          "Tahu Goreng",
+          "Lalap",
+          "Telor Balado",
+          "Emping",
+          "Kerupuk"
+        ],
+
+        "Soups & Salads": [
+          "Gado Gado",
+          "Asinan Bogor",
+          "Soto Betawi",
+          "Sayur Asem",
+          "Soto Ayam"
+        ],
+
+        "Rice & Noodles": [
+          "Bakmie Ayam",
+          "Bakmie Udang",
+          "Nasi Goreng Ayam Udang",
+          "Mie Goreng",
+          "Kwetiau Siram",
+          "Kwetiau Goreng"
+        ],
+
+        "Beef & Satay": [
+          "Empal Sapi",
+          "Sate Sapi",
+          "Rendang Sapi"
+        ],
+
+        "Chicken": [
+          "Sate Ayam",
+          "Ayam Panggang Bumbu Cabe",
+          "Ayam Goreng Kuning",
+          "Ayam Goreng Mentega"
+        ],
+
+        "Seafood": [
+          "Ikan Goreng",
+          "Ikan Goreng Tepung Asem Manis",
+          "Udang Goreng Tepung Saus Mentega"
+        ],
+
+        "Vegetables & Other Dishes": [
+          "Pu Yung Hai",
+          "Cap Cai",
+          "Cah Kangkung",
+          "Cah Buncis",
+          "Sambal Goreng Kentang Buncis"
+        ],
+
+        "Drinks": [
+          "Es Kelapa"
+        ]
+      }
+    };
+
+    // --------------------------------------------------
+    // INTERACTIVE MENU
+    // --------------------------------------------------
+
+    const menuGrid = document.getElementById("menu-grid");
+    const categoryFilters = document.getElementById("category-filters");
+    const searchInput = document.getElementById("menu-search");
+    const tabButtons = document.querySelectorAll(".tab-button");
+
+    let currentMenu = "chinese";
+    let currentCategory = "All";
+
+    function getCategories() {
+      return Object.keys(menus[currentMenu]);
+    }
+
+    function renderFilters() {
+      const categories = ["All", ...getCategories()];
+
+      categoryFilters.innerHTML = "";
+
+      categories.forEach(category => {
+        const button = document.createElement("button");
+
+        button.className =
+          "filter-button" +
+          (category === currentCategory ? " active" : "");
+
+        button.textContent = category;
+
+        button.addEventListener("click", () => {
+          currentCategory = category;
+          renderFilters();
+          renderMenu();
+        });
+
+        categoryFilters.appendChild(button);
+      });
+    }
+
+    function renderMenu() {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+
+      menuGrid.innerHTML = "";
+
+      Object.entries(menus[currentMenu]).forEach(
+        ([category, items]) => {
+
+          if (
+            currentCategory !== "All" &&
+            currentCategory !== category
+          ) {
+            return;
+          }
+
+          const matchingItems = items.filter(item =>
+            item.toLowerCase().includes(searchTerm)
+          );
+
+          if (matchingItems.length === 0) {
+            return;
+          }
+
+          const heading = document.createElement("h3");
+          heading.className = "menu-category-title";
+          heading.textContent = category;
+
+          menuGrid.appendChild(heading);
+
+          matchingItems.forEach(item => {
+            const card = document.createElement("article");
+            card.className = "menu-item";
+
+            const title = document.createElement("h3");
+            title.textContent = item;
+
+            const description = document.createElement("p");
+            description.textContent =
+              "Ask the restaurant about current preparation and availability.";
+
+            card.appendChild(title);
+            card.appendChild(description);
+
+            menuGrid.appendChild(card);
+          });
+        }
+      );
+
+      if (menuGrid.children.length === 0) {
+        const message = document.createElement("p");
+        message.textContent = "No matching dishes found.";
+        menuGrid.appendChild(message);
+      }
+    }
+
+    tabButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        currentMenu = button.dataset.menu;
+        currentCategory = "All";
+
+        tabButtons.forEach(tab =>
+          tab.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        renderFilters();
+        renderMenu();
+      });
+    });
+
+    searchInput.addEventListener("input", renderMenu);
+
+    // Initial menu display
+    renderFilters();
+    renderMenu();
+  </script>
+
+</body>
+</html>
