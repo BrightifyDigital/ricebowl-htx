@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -312,7 +311,7 @@
 
     .specials-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
     }
 
@@ -341,13 +340,73 @@
       font-weight: 700;
     }
 
-    .special-card p {
+    .special-card > p {
       color: var(--muted);
       font-size: 14px;
     }
 
+    .special-includes {
+      margin: 12px 0 17px;
+      padding: 12px 14px;
+      background: #fbf7ef;
+      border-radius: 4px;
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .special-includes strong {
+      color: var(--wine);
+    }
+
+    .special-price {
+      margin-top: 16px;
+      color: var(--wine);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .special-options-details {
+      margin-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .special-options-details summary {
+      padding: 13px 0;
+      color: var(--wine);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .special-options-list {
+      padding: 0 0 8px 22px;
+      columns: 2;
+      column-gap: 25px;
+    }
+
+    .special-options-list li {
+      break-inside: avoid;
+      padding: 5px 0;
+      color: var(--ink);
+      font-size: 12px;
+    }
+
+    .spicy-label {
+      color: #9a3c2d;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
     .specials-action {
       margin-top: 25px;
+      text-align: center;
+    }
+
+    .specials-note {
+      max-width: 800px;
+      margin: 20px auto 0;
+      color: var(--muted);
+      font-size: 12px;
       text-align: center;
     }
 
@@ -621,6 +680,12 @@
       }
     }
 
+    @media (max-width: 520px) {
+      .special-options-list {
+        columns: 1;
+      }
+    }
+
     @media (max-width: 420px) {
       .hero h1 {
         font-size: 42px;
@@ -637,12 +702,10 @@
 
 <body>
 
-  <!-- Independent concept notice -->
   <div class="concept-banner">
     Independent website concept by Brightify Digital · Not the restaurant's official website
   </div>
 
-  <!-- Navigation -->
   <header>
     <nav class="nav">
       <a href="#home" class="brand">
@@ -746,29 +809,103 @@
         <div class="eyebrow">More Ways to Enjoy Rice Bowl</div>
         <h2>Lunch & Dinner Specials</h2>
         <p>
-          Visit during lunch or enjoy a dinner special.
-          Contact the restaurant for current selections and prices.
+          Choose from 22 entrée options with each special.
+          Open a special below to see the available dishes and what is included.
         </p>
       </div>
 
       <div class="specials-grid">
+
+        <!-- Lunch Special -->
         <article class="special-card">
           <h3>Lunch Specials</h3>
           <span class="special-time">11:00 AM – 4:00 PM</span>
+
+          <div class="special-includes">
+            <strong>Includes:</strong> Fried rice and an egg roll.
+          </div>
+
           <p>
-            Explore Rice Bowl's lunch special selections,
-            available during the lunch hours.
+            Choose one entrée from the 22 available lunch special options.
           </p>
+
+          <details class="special-options-details">
+            <summary>View all 22 lunch options</summary>
+
+            <ol class="special-options-list">
+              <li>Moo Gai Pan</li>
+              <li>Sesame Chicken</li>
+              <li>Chicken with Mixed Vegetables</li>
+              <li>Sweet and Sour Chicken</li>
+              <li>Kung Pao Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Cashew Chicken</li>
+              <li>Chicken with Broccoli</li>
+              <li>Hunan Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Chicken in Garlic Sauce <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>General Joe's Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Curry Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Beef with Broccoli</li>
+              <li>Pepper Steak and Onion</li>
+              <li>Hunan Beef <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Shrimp with Lobster Sauce</li>
+              <li>Shrimp with Mixed Vegetables</li>
+              <li>Shrimp in Garlic Sauce <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Shrimp and Chicken Two Style <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Chicken, Beef and Shrimp in Mandarin Style</li>
+              <li>Shrimp with Broccoli</li>
+              <li>Lemon Chicken</li>
+              <li>Orange Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+            </ol>
+          </details>
+
+          <div class="special-price">Price: $</div>
         </article>
 
+        <!-- Dinner Special -->
         <article class="special-card">
           <h3>Dinner Specials</h3>
           <span class="special-time">Available All Day</span>
+
+          <div class="special-includes">
+            <strong>Includes:</strong> Fried rice, an egg roll, and a cream cheese puff.
+          </div>
+
           <p>
-            Enjoy the dinner special selections.
-            Contact the restaurant for current options.
+            Choose one entrée from the 22 available dinner special options.
           </p>
+
+          <details class="special-options-details">
+            <summary>View all 22 dinner options</summary>
+
+            <ol class="special-options-list">
+              <li>Moo Gai Pan</li>
+              <li>Sesame Chicken</li>
+              <li>Chicken with Mixed Vegetables</li>
+              <li>Sweet and Sour Chicken</li>
+              <li>Kung Pao Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Cashew Chicken</li>
+              <li>Chicken with Broccoli</li>
+              <li>Hunan Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Chicken in Garlic Sauce <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>General Joe's Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Curry Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Beef with Broccoli</li>
+              <li>Pepper Steak and Onion</li>
+              <li>Hunan Beef <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Shrimp with Lobster Sauce</li>
+              <li>Shrimp with Mixed Vegetables</li>
+              <li>Shrimp in Garlic Sauce <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Shrimp and Chicken Two Style <span class="spicy-label">(Hot & Spicy)</span></li>
+              <li>Chicken, Beef and Shrimp in Mandarin Style</li>
+              <li>Shrimp with Broccoli</li>
+              <li>Lemon Chicken</li>
+              <li>Orange Chicken <span class="spicy-label">(Hot & Spicy)</span></li>
+            </ol>
+          </details>
+
+          <div class="special-price">Price: $</div>
         </article>
+
       </div>
 
       <div class="specials-action">
@@ -776,6 +913,11 @@
           View Specials & Full Menu
         </a>
       </div>
+
+      <p class="specials-note">
+        Prices, selections, included items, and availability may change.
+        Please confirm current details directly with the restaurant.
+      </p>
     </section>
 
     <!-- Compact Menu Preview -->
@@ -803,12 +945,12 @@
 
         <div class="preview-row">
           <strong>Lunch Specials</strong>
-          <span>11:00 AM – 4:00 PM</span>
+          <span>11:00 AM – 4:00 PM · 22 entrée options</span>
         </div>
 
         <div class="preview-row">
           <strong>Dinner Specials</strong>
-          <span>Available all day</span>
+          <span>Available all day · 22 entrée options</span>
         </div>
 
         <div class="menu-preview-action">
@@ -934,7 +1076,13 @@
               <strong>all day.</strong>
             </p>
             <p>
-              Contact the restaurant for current selections and prices.
+              Both specials offer 22 entrée options. Lunch includes
+              fried rice and an egg roll. Dinner includes fried rice,
+              an egg roll, and a cream cheese puff.
+            </p>
+            <p>
+              See the <a href="menu.html">specials menu</a> for the
+              full list of entrée options.
             </p>
           </div>
         </details>
@@ -1022,7 +1170,6 @@
 
   </main>
 
-  <!-- Footer -->
   <footer>
     <a href="#home" class="brand">
       RICE BOWL
