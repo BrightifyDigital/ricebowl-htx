@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Menu | Rice Bowl</title>
-  <meta name="description" content="Explore Chinese-American and Indonesian menu selections at Rice Bowl in Houston, Texas.">
+  <meta name="description" content="Explore Chinese-American and Indonesian dishes, lunch specials, and dinner specials at Rice Bowl in Houston, Texas.">
+  <meta name="theme-color" content="#651f2b">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +31,11 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
     body {
       background: var(--cream);
       color: var(--ink);
@@ -50,17 +56,17 @@
     .concept-banner {
       background: #f1e6d5;
       color: #634c35;
-      text-align: center;
       padding: 9px 16px;
+      text-align: center;
       font-size: 12px;
     }
 
     header {
-      background: var(--paper);
-      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 10;
+      background: var(--paper);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav {
@@ -78,10 +84,12 @@
       font-family: "Playfair Display", serif;
       font-size: 25px;
       font-weight: 800;
+      line-height: 1.1;
     }
 
     .brand small {
       display: block;
+      margin-top: 5px;
       color: var(--gold);
       font-family: "DM Sans", sans-serif;
       font-size: 9px;
@@ -90,8 +98,9 @@
 
     .nav-links {
       display: flex;
-      gap: 25px;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
       font-size: 14px;
       font-weight: 600;
     }
@@ -100,23 +109,30 @@
       color: var(--wine);
     }
 
+    .nav-button {
+      padding: 10px 17px;
+      background: var(--wine);
+      color: white;
+      border-radius: 4px;
+    }
+
     .page-hero {
+      padding: 82px 20px;
       background:
         linear-gradient(rgba(45, 15, 18, .83), rgba(45, 15, 18, .83)),
         url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=85")
         center/cover;
       color: white;
       text-align: center;
-      padding: 90px 20px;
     }
 
     .eyebrow {
+      margin-bottom: 12px;
       color: var(--gold);
       font-size: 12px;
       font-weight: 700;
       letter-spacing: .2em;
       text-transform: uppercase;
-      margin-bottom: 13px;
     }
 
     h1,
@@ -127,8 +143,9 @@
     }
 
     .page-hero h1 {
+      margin-bottom: 14px;
+      color: white;
       font-size: clamp(42px, 6vw, 65px);
-      margin-bottom: 15px;
     }
 
     .page-hero p {
@@ -138,40 +155,97 @@
     }
 
     .menu-container {
-      max-width: 1180px;
+      max-width: 1050px;
       margin: auto;
-      padding: 70px 24px 90px;
+      padding: 58px 24px 80px;
     }
 
     .intro {
-      text-align: center;
       max-width: 650px;
-      margin: 0 auto 40px;
+      margin: 0 auto 35px;
+      text-align: center;
     }
 
     .intro h2 {
+      margin-bottom: 10px;
       color: var(--wine);
-      font-size: 36px;
-      margin-bottom: 12px;
+      font-size: 35px;
     }
 
     .intro p {
       color: var(--muted);
     }
 
+    .specials-heading {
+      margin-bottom: 20px;
+      color: var(--wine);
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .specials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 42px;
+    }
+
+    .special-card {
+      padding: 25px;
+      background: white;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      border-radius: 6px;
+    }
+
+    .special-card h3 {
+      margin-bottom: 8px;
+      color: var(--wine);
+      font-size: 24px;
+    }
+
+    .special-time {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      background: #f4ead9;
+      color: var(--wine-dark);
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .special-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .special-price {
+      margin-top: 14px;
+      color: var(--wine);
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .menu-divider {
+      margin: 42px 0 30px;
+      border: 0;
+      border-top: 1px solid var(--border);
+    }
+
     .menu-tabs {
       display: flex;
       justify-content: center;
-      gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      gap: 10px;
+      margin-bottom: 20px;
     }
 
     .tab-button {
-      border: 1px solid var(--border);
+      padding: 11px 23px;
       background: white;
       color: var(--wine);
-      padding: 13px 25px;
+      border: 1px solid var(--border);
       border-radius: 4px;
       font-weight: 700;
       cursor: pointer;
@@ -186,31 +260,31 @@
     .search {
       display: block;
       width: 100%;
-      max-width: 520px;
-      margin: 0 auto 28px;
-      padding: 14px 17px;
-      border: 1px solid var(--border);
+      max-width: 480px;
+      margin: 0 auto 20px;
+      padding: 12px 15px;
       background: white;
+      border: 1px solid var(--border);
       border-radius: 4px;
       outline-color: var(--gold);
     }
 
     .filters {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 9px;
-      margin-bottom: 38px;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 27px;
     }
 
     .filter {
-      border: 1px solid var(--border);
+      padding: 7px 13px;
       background: white;
       color: var(--muted);
-      padding: 9px 15px;
+      border: 1px solid var(--border);
       border-radius: 30px;
-      cursor: pointer;
       font-size: 12px;
+      cursor: pointer;
     }
 
     .filter.active {
@@ -221,64 +295,100 @@
 
     .menu-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 25px;
     }
 
     .category-title {
       grid-column: 1 / -1;
+      margin-top: 24px;
+      margin-bottom: 7px;
+      padding-bottom: 8px;
       color: var(--wine);
-      font-size: 26px;
-      margin-top: 20px;
-      padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
+      font-size: 23px;
     }
 
     .menu-item {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      padding: 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 2px;
+      border-bottom: 1px solid var(--border);
     }
 
     .menu-item h3 {
-      color: var(--wine);
-      font-size: 19px;
-      margin-bottom: 6px;
+      margin-bottom: 2px;
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
     }
 
     .menu-item p {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
+    }
+
+    .menu-price {
+      color: var(--wine);
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .empty-message {
+      grid-column: 1 / -1;
+      padding: 25px;
+      color: var(--muted);
+      text-align: center;
     }
 
     .notice {
+      margin-top: 30px;
+      padding: 16px 19px;
       background: #f1e9dc;
       border-left: 4px solid var(--gold);
-      padding: 18px 20px;
-      margin-top: 35px;
       color: #62574c;
       font-size: 13px;
     }
 
     .back-link {
       display: inline-block;
+      margin-top: 27px;
       color: var(--wine);
       font-weight: 700;
-      margin-top: 30px;
     }
 
     footer {
+      padding: 36px 20px;
       background: #28191a;
       color: white;
       text-align: center;
-      padding: 35px 20px;
+    }
+
+    footer h2 {
+      color: white;
     }
 
     footer p {
+      margin-top: 8px;
       color: #c9bdb5;
       font-size: 13px;
-      margin-top: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 18px 0;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
     }
 
     @media (max-width: 700px) {
@@ -288,17 +398,21 @@
       }
 
       .nav-links {
-        flex-wrap: wrap;
-        gap: 14px;
+        gap: 13px;
         font-size: 12px;
       }
 
+      .specials-grid,
       .menu-grid {
         grid-template-columns: 1fr;
       }
 
       .menu-container {
-        padding: 55px 18px;
+        padding: 45px 18px 65px;
+      }
+
+      .page-hero {
+        padding: 65px 18px;
       }
     }
   </style>
@@ -320,8 +434,9 @@
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
-        <a href="index.html#reviews">Reviews</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html#faq">FAQ</a>
       </div>
     </nav>
   </header>
@@ -341,8 +456,50 @@
       <div class="eyebrow">Something for Everyone</div>
       <h2>Our Food Selection</h2>
       <p>
-        Choose a cuisine, explore the categories, or search
-        for a particular dish.
+        Explore lunch and dinner specials, browse two cuisines,
+        or search for a particular dish.
+      </p>
+    </div>
+
+    <!-- Lunch and dinner specials -->
+    <h2 class="specials-heading">Daily Specials</h2>
+
+    <div class="specials-grid">
+      <article class="special-card">
+        <h3>Lunch Specials</h3>
+        <span class="special-time">11:00 AM – 4:00 PM</span>
+        <p>
+          Explore Rice Bowl's lunch special selections.
+          Contact the restaurant for current dishes and details.
+        </p>
+        <div class="special-price">Price: $________</div>
+      </article>
+
+      <article class="special-card">
+        <h3>Dinner Specials</h3>
+        <span class="special-time">Available All Day</span>
+        <p>
+          Explore Rice Bowl's dinner special selections.
+          Contact the restaurant for current dishes and details.
+        </p>
+        <div class="special-price">Price: $________</div>
+      </article>
+    </div>
+
+    <div class="notice">
+      <strong>Specials information:</strong>
+      Special selections, prices, and availability should be confirmed
+      directly with the restaurant.
+    </div>
+
+    <hr class="menu-divider">
+
+    <!-- Main menu -->
+    <div class="intro">
+      <div class="eyebrow">Two Cuisines</div>
+      <h2>Chinese & Indonesian Menu</h2>
+      <p>
+        Select a cuisine, choose a category, or search for a dish.
       </p>
     </div>
 
@@ -369,10 +526,11 @@
     <div class="menu-grid" id="menu-grid"></div>
 
     <div class="notice">
-      <strong>Menu information:</strong>
-      This independent concept uses publicly available menu
-      documents. Prices, ingredients, descriptions, and current
-      availability have not been confirmed by the restaurant.
+      <strong>Prices subject to change.</strong>
+      Prices are shown as editable placeholders because current prices
+      have not been confirmed. Descriptions are listed as N/A where
+      details have not been provided. Please contact Rice Bowl for
+      current pricing, ingredients, and availability.
     </div>
 
     <a href="index.html" class="back-link">← Back to Homepage</a>
@@ -382,7 +540,16 @@
   <footer>
     <h2>RICE BOWL</h2>
     <p>Chinese & Indonesian Cuisine</p>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
     <p>14360 Bellaire Blvd #98, Houston, TX 77083</p>
+    <p>(281) 988-9912</p>
     <p>Independent concept by Brightify Digital</p>
   </footer>
 
@@ -568,7 +735,6 @@
     const grid = document.getElementById("menu-grid");
     const filters = document.getElementById("filters");
     const search = document.getElementById("search");
-
     const tabs = document.querySelectorAll(".tab-button");
 
     let activeMenu = "chinese";
@@ -620,9 +786,7 @@
             item.toLowerCase().includes(query)
           );
 
-          if (!results.length) {
-            return;
-          }
+          if (!results.length) return;
 
           const heading = document.createElement("h2");
           heading.className = "category-title";
@@ -631,26 +795,35 @@
           grid.appendChild(heading);
 
           results.forEach(item => {
-            const card = document.createElement("article");
-            card.className = "menu-item";
+            const row = document.createElement("article");
+            row.className = "menu-item";
+
+            const details = document.createElement("div");
 
             const title = document.createElement("h3");
             title.textContent = item;
 
             const description = document.createElement("p");
-            description.textContent =
-              "Ask the restaurant about current availability.";
+            description.textContent = "N/A";
 
-            card.appendChild(title);
-            card.appendChild(description);
+            const price = document.createElement("span");
+            price.className = "menu-price";
+            price.textContent = "$____";
 
-            grid.appendChild(card);
+            details.appendChild(title);
+            details.appendChild(description);
+
+            row.appendChild(details);
+            row.appendChild(price);
+
+            grid.appendChild(row);
           });
         }
       );
 
       if (!grid.children.length) {
         const empty = document.createElement("p");
+        empty.className = "empty-message";
         empty.textContent = "No matching dishes found.";
         grid.appendChild(empty);
       }
@@ -661,9 +834,9 @@
         activeMenu = tab.dataset.menu;
         activeCategory = "All";
 
-        tabs.forEach(button =>
-          button.classList.remove("active")
-        );
+        tabs.forEach(button => {
+          button.classList.remove("active");
+        });
 
         tab.classList.add("active");
 
